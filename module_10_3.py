@@ -1,10 +1,7 @@
-# Задача "Банковские операции":
 import threading
 import random
 import time
 from threading import Thread, Lock
-
-
 
 class Bank(Thread):
 
@@ -13,7 +10,6 @@ class Bank(Thread):
         self.balance = 0
         self.lock = Lock()
 
-# 1 Поток "депозит"
     def deposit(self):
         for i in range(100):
             if self.balance >= 500 and self.lock.locked():
@@ -22,10 +18,8 @@ class Bank(Thread):
             self.balance += y
             print(f'Пополнение: {y}. Баланс: {self.balance}')
 
-            # ожидание в 0.001 секунды,имитация скорости выполнения пополнения.
             time.sleep(0.001)
 
-# 2й поток "Брать"
     def take(self):
         for i in range(100):
             x = random.randint(50,500)
