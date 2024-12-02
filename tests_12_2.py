@@ -63,6 +63,5 @@ class TournamentTest(unittest.TestCase):
         self.all_results[3] = results
         self.assertEqual(results[max(results)], "Ник")
 
-# Запуск тестов
 if __name__ == '__main__':
     unittest.main()
